@@ -1,19 +1,12 @@
-# AI
+═══════════════════════════════════════════════════════════════════════════
+    EDUCATIONAL BITCOIN MINING SIMULATOR - WINDOWS COMMANDS
+═══════════════════════════════════════════════════════════════════════════
 
+⚠️  EDUCATIONAL ONLY - NO REAL BITCOIN
 
-├── main.py              # Application entry point
-├── config/              # Configuration files
-├── core/                # Core agent logic
-│   ├── agent.py         # Main agent orchestrator
-│   ├── planner.py       # Task planning
-│   ├── memory.py        # Long-term memory
-│   └── task_manager.py  # Task execution
-├── ai/                  # AI provider system
-├── voice/               # Speech I/O
-├── tools/               # Agent capabilities
-├── security/            # Permission system
-├── database/            # SQLite storage
-├── gui/                 # Desktop interface
-└── tests/               # Automated tests
+═══════════════════════════════════════════════════════════════════════════
+STEP 1: CHECK PYTHON INSTALLATION
+═══════════════════════════════════════════════════════════════════════════
 
-complete this please
+Open Command Prompt (Win + R, type "cmd", press Enter), then type:
+

@@ -1,0 +1,131 @@
+╔════════════════════════════════════════════════════════════════╗
+║   EDUCATIONAL BITCOIN MINING SIMULATOR - QUICK START GUIDE     ║
+║                      FOR WINDOWS 10/11                         ║
+╚════════════════════════════════════════════════════════════════╝
+
+⚠️  IMPORTANT: This is EDUCATIONAL ONLY - NO REAL BITCOIN!
+
+═══════════════════════════════════════════════════════════════════
+STEP 1: VERIFY PYTHON IS INSTALLED
+═══════════════════════════════════════════════════════════════════
+
+Open Command Prompt or PowerShell and type:
+
+    python --version
+
+You should see: Python 3.7.x or higher
+
+If not installed, download from: https://www.python.org/downloads/
+(Make sure to check "Add Python to PATH" during installation!)
+
+═══════════════════════════════════════════════════════════════════
+STEP 2: NAVIGATE TO THE SIMULATOR FOLDER
+═══════════════════════════════════════════════════════════════════
+
+Open Command Prompt and navigate to where you saved the files:
+
+    cd C:\bitcoin-mining-simulator
+
+(Replace with your actual folder path)
+
+═══════════════════════════════════════════════════════════════════
+STEP 3: RUN THE SIMULATOR
+═══════════════════════════════════════════════════════════════════
+
+Simply type:
+
+    python main.py
+
+The GUI window will open immediately!
+
+═══════════════════════════════════════════════════════════════════
+QUICK USAGE GUIDE
+═══════════════════════════════════════════════════════════════════
+
+1. Select "Easy" or "Medium" difficulty
+2. Keep CPU Workload at "Medium" (default)
+3. Click "⛏ Start Mining"
+4. Watch the statistics update in real-time!
+5. Click "⏸ Pause" to pause mining
+6. Click "⏹ Stop" to stop completely
+7. Click "🔄 Reset" to clear everything
+
+EDUCATIONAL FEATURES:
+• 🔧 Tamper Test - See how changing data breaks the blockchain
+• ✓ Validate Blockchain - Check if the chain is valid
+• Double-click any block to see full details!
+
+═══════════════════════════════════════════════════════════════════
+TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════════
+
+Problem: "python is not recognized"
+Solution: Reinstall Python with "Add to PATH" checked
+
+Problem: GUI doesn't open
+Solution: Check if tkinter is installed:
+    python -c "import tkinter"
+
+Problem: Mining too slow
+Solution: Choose "Very Easy" or "Easy" difficulty
+
+Problem: Computer getting hot
+Solution: Reduce CPU workload to "Low", stop mining
+
+═══════════════════════════════════════════════════════════════════
+RUNNING TESTS (OPTIONAL)
+═══════════════════════════════════════════════════════════════════
+
+To verify everything works:
+
+    python tests\test_blockchain.py
+
+You should see: "OK" with all tests passing
+
+═══════════════════════════════════════════════════════════════════
+WHAT TO EXPECT
+═══════════════════════════════════════════════════════════════════
+
+DIFFICULTY LEVELS:
+• Very Easy (2 zeros) - Blocks mine in seconds
+• Easy (3 zeros) - Blocks mine in ~10-30 seconds  ✅ RECOMMENDED
+• Medium (4 zeros) - Blocks mine in ~1-5 minutes
+• Hard (5 zeros) - Blocks mine in ~10-30 minutes
+• Very Hard (6 zeros) - Blocks mine in hours
+
+HASH RATES (depends on your CPU):
+• Typical: 5,000 - 50,000 hashes/second
+• Real Bitcoin miners: TRILLIONS of hashes/second!
+
+═══════════════════════════════════════════════════════════════════
+⚠️  IMPORTANT REMINDERS
+═══════════════════════════════════════════════════════════════════
+
+✗ This does NOT mine real Bitcoin
+✗ Demo coins have NO monetary value
+✗ Cannot be traded or exchanged
+✗ No internet connection required or used
+✗ Completely safe and isolated simulator
+
+✓ For educational purposes only
+✓ Learn how Proof-of-Work operates
+✓ Understand blockchain technology
+✓ See SHA-256 hashing in action
+
+═══════════════════════════════════════════════════════════════════
+NEED MORE HELP?
+═══════════════════════════════════════════════════════════════════
+
+Read the complete README.md file for:
+• Detailed explanations
+• Technical details
+• Educational resources
+• FAQ section
+• Full troubleshooting guide
+
+═══════════════════════════════════════════════════════════════════
+
+Happy Learning! ⛏️
+
+Remember: This simulator helps you understand Bitcoin mining concepts
+without the cost and complexity of real mining equipment!

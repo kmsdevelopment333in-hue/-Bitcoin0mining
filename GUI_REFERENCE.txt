@@ -1,0 +1,431 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║            EDUCATIONAL BITCOIN MINING SIMULATOR - GUI REFERENCE           ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════════════════════
+🖥️  MAIN WINDOW LAYOUT
+═══════════════════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    Educational Bitcoin Mining Simulator                 │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │  ⚠️ EDUCATIONAL SIMULATOR — NO REAL BITCOIN                      │   │
+│  │  24-HOUR RUN MODE                                               │   │
+│  │  Warning: Long CPU workloads can increase temperature,          │   │
+│  │  electricity consumption and hardware wear. Monitor your        │   │
+│  │  computer temperature.                                          │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                                                                         │
+│  ┌──────────────────────────┬──────────────────────────────────────┐   │
+│  │  Mining Controls         │  Mining Statistics                   │   │
+│  │  ┌──────────────────┐    │  ┌──────────────────────────────┐   │   │
+│  │  │ ⛏ Start Mining   │    │  │ Current Block: 1             │   │   │
+│  │  └──────────────────┘    │  │ Current Nonce: 45,893        │   │   │
+│  │  ┌──────────────────┐    │  │ Current Hash: 0001a2b3c4...  │   │   │
+│  │  │ ⏸ Pause          │    │  │ Hash Rate: 25,432.18 H/s     │   │   │
+│  │  └──────────────────┘    │  │ Total Hashes: 1,234,567      │   │   │
+│  │  ┌──────────────────┐    │  │ Blocks Found: 3              │   │   │
+│  │  │ ⏹ Stop           │    │  │ Runtime: 00:05:23            │   │   │
+│  │  └──────────────────┘    │  │ Demo Coins — NOT REAL BTC:   │   │   │
+│  │  ┌──────────────────┐    │  │ 18.75                        │   │   │
+│  │  │ 🔄 Reset         │    │  └──────────────────────────────┘   │   │
+│  │  └──────────────────┘    │                                      │   │
+│  │                          │                                      │   │
+│  │  Difficulty: [Medium ▼]  │                                      │   │
+│  │                          │                                      │   │
+│  │  CPU Workload:           │                                      │   │
+│  │  [Medium ▼]              │                                      │   │
+│  │                          │                                      │   │
+│  │  Educational Features    │                                      │   │
+│  │  ┌──────────────────┐    │                                      │   │
+│  │  │ 🔧 Tamper Test   │    │                                      │   │
+│  │  └──────────────────┘    │                                      │   │
+│  │  ┌──────────────────┐    │                                      │   │
+│  │  │ ✓ Validate Chain │    │                                      │   │
+│  │  └──────────────────┘    │                                      │   │
+│  └──────────────────────────┴──────────────────────────────────────┘   │
+│                                                                         │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │ Blockchain Viewer                                               │   │
+│  │                                                                 │   │
+│  │ Block│Prev Hash       │Nonce │Hash            │Diff│Time  │Sta │   │
+│  │ ────┼────────────────┼──────┼────────────────┼────┼──────┼────│   │
+│  │  0  │ 0              │  0   │ 89a3f2...      │ 1  │12:00 │Gen │   │
+│  │  1  │ 89a3f2...      │12,345│ 000a7b...      │ 4  │12:01 │Min │   │
+│  │  2  │ 000a7b...      │98,761│ 0000c3...      │ 4  │12:03 │Min │   │
+│  │  3  │ 0000c3...      │45,893│ 0000f9...      │ 4  │12:06 │Min │   │
+│  │                                                                 │   │
+│  │ ↑ Scroll for more blocks                                       │   │
+│  │ ↑ Double-click any block to see full details                   │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                                                                         │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │ Mining Log                                                      │   │
+│  │                                                                 │   │
+│  │ [12:00:00] Educational Bitcoin Mining Simulator initialized    │   │
+│  │ [12:00:00] This is a demonstration only - no real Bitcoin      │   │
+│  │ [12:00:15] Mining started                                      │   │
+│  │ [12:00:45] ✓ Block 1 found! Hash: 000a7b3c4d...               │   │
+│  │ [12:01:30] ✓ Block 2 found! Hash: 0000c3d5e6...               │   │
+│  │ [12:03:15] ✓ Block 3 found! Hash: 0000f9a2b1...               │   │
+│  │                                                                 │   │
+│  │ ↑ Scroll to see more log entries                               │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════
+🎛️  CONTROL PANEL BUTTONS
+═══════════════════════════════════════════════════════════════════════════
+
+⛏ START MINING
+   • Begins the mining process
+   • Creates new block
+   • Starts calculating hashes
+   • Disables Start button
+   • Enables Pause and Stop buttons
+
+⏸ PAUSE / ▶ RESUME
+   • Pauses mining temporarily
+   • Can resume from same point
+   • Button text toggles between "Pause" and "Resume"
+   • Useful for short breaks
+
+⏹ STOP
+   • Completely stops mining
+   • Current block progress is lost
+   • Can start new block with Start button
+   • Re-enables Start button
+
+🔄 RESET
+   • Clears all statistics
+   • Resets blockchain to genesis block only
+   • Resets counters to zero
+   • Asks for confirmation first
+
+═══════════════════════════════════════════════════════════════════════════
+⚙️  SETTINGS DROPDOWNS
+═══════════════════════════════════════════════════════════════════════════
+
+DIFFICULTY SELECTOR:
+   ┌─────────────┐
+   │ Very Easy   │ → 2 leading zeros (00...)
+   │ Easy        │ → 3 leading zeros (000...) ✅ Recommended for beginners
+   │ Medium      │ → 4 leading zeros (0000...)
+   │ Hard        │ → 5 leading zeros (00000...)
+   │ Very Hard   │ → 6 leading zeros (000000...)
+   └─────────────┘
+   • Can change anytime
+   • New difficulty applies to next block
+   • Does not affect current mining
+
+CPU WORKLOAD SELECTOR:
+   ┌─────────────┐
+   │ Low         │ → 1,000 hashes/batch (~10% CPU)
+   │ Medium      │ → 5,000 hashes/batch (~30% CPU) ✅ Default
+   │ High        │ → 10,000 hashes/batch (~60% CPU)
+   └─────────────┘
+   • Controls CPU usage
+   • Higher = faster mining but more heat
+   • Can change anytime during mining
+
+═══════════════════════════════════════════════════════════════════════════
+📊 STATISTICS DISPLAY
+═══════════════════════════════════════════════════════════════════════════
+
+Current Block: 3
+   → Currently mining block #3
+
+Current Nonce: 45,893
+   → Currently trying nonce value 45,893
+   → Increments rapidly during mining
+
+Current Hash: 0001a2b3c4d5e6f7890...
+   → Latest SHA-256 hash calculated
+   → Truncated to first 32 characters for display
+   → Changes with every nonce
+
+Hash Rate: 25,432.18 H/s
+   → Hashes per second
+   → Formula: Total Hashes / Elapsed Time
+   → Typical range: 5,000 - 50,000 H/s
+
+Total Hashes: 1,234,567
+   → Total hashes calculated since start
+   → Formatted with thousands separators
+
+Blocks Found: 3
+   → Number of successfully mined blocks
+   → Each block = 6.25 demo coins
+
+Runtime: 00:05:23
+   → Hours:Minutes:Seconds since start
+   → Continues during pause (tracks wall time)
+
+Demo Coins — NOT REAL BTC: 18.75
+   → Simulated reward only
+   → Blocks Found × 6.25
+   → NO monetary value!
+   → Displayed in green
+
+═══════════════════════════════════════════════════════════════════════════
+🎓 EDUCATIONAL FEATURES
+═══════════════════════════════════════════════════════════════════════════
+
+🔧 TAMPER TEST:
+   What it does:
+   • Modifies Block 1's data to "TAMPERED DATA - Educational Demo"
+   • Recalculates Block 1's hash
+   • Shows new hash in blockchain viewer
+   • Block 2's "Previous Hash" no longer matches Block 1's hash
+   • Chain becomes INVALID
+   
+   Purpose:
+   • Demonstrates blockchain immutability
+   • Shows how tampering is detected
+   • Teaches why blockchain is secure
+   
+   How to use:
+   1. Mine at least 1 block first
+   2. Click "🔧 Tamper Test"
+   3. Observe changes in Blockchain Viewer
+   4. Click "✓ Validate Blockchain" to see error
+
+✓ VALIDATE BLOCKCHAIN:
+   What it does:
+   • Checks every block in the chain
+   • Verifies hash calculations are correct
+   • Verifies all blocks are properly linked
+   • Verifies all blocks meet difficulty requirement
+   
+   Shows one of:
+   • "✓ Blockchain is valid" (green checkmark)
+   • "✗ Block N: [error description]" (red X)
+   
+   Common errors after tampering:
+   • "Block 1: Does not meet difficulty requirement"
+   • "Block 2: Previous hash mismatch"
+   
+   How to use:
+   • Click anytime to check chain integrity
+   • Use after "Tamper Test" to see validation fail
+   • Use after mining to confirm chain is valid
+
+═══════════════════════════════════════════════════════════════════════════
+🔍 BLOCKCHAIN VIEWER TABLE
+═══════════════════════════════════════════════════════════════════════════
+
+Columns:
+
+Block
+   • Block number (0, 1, 2, 3, ...)
+   • Block 0 is always Genesis block
+
+Previous Hash
+   • Hash of previous block in chain
+   • Genesis block shows "0"
+   • Truncated to first 16 characters + "..."
+
+Nonce
+   • The winning nonce value that produced valid hash
+   • Shows how many attempts were needed
+   • Formatted with thousands separators
+
+Hash
+   • The block's SHA-256 hash
+   • Must start with N zeros (N = difficulty)
+   • Truncated to first 16 characters + "..."
+
+Difficulty
+   • Number of leading zeros required
+   • Genesis: 1
+   • Mined blocks: 2-6 (based on your selection)
+
+Timestamp
+   • When block was mined
+   • Format: YYYY-MM-DD HH:MM:SS
+
+Status
+   • Genesis: Block 0 only
+   • Mined: Successfully mined block
+   • Tampered: Data was modified after mining
+
+Features:
+   • Scrollable for many blocks
+   • Auto-updates when new block is mined
+   • Double-click any row to see full block details
+   • Shows complete blockchain history
+
+═══════════════════════════════════════════════════════════════════════════
+📝 MINING LOG
+═══════════════════════════════════════════════════════════════════════════
+
+Shows real-time activity with timestamps:
+
+Startup Messages:
+   [12:00:00] Educational Bitcoin Mining Simulator initialized
+   [12:00:00] This is a demonstration only - no real Bitcoin mining occurs
+
+Mining Messages:
+   [12:00:15] Mining started
+   [12:00:45] ✓ Block 1 found! Hash: 000a7b3c4d...
+   [12:01:30] Mining block 2...
+   [12:02:15] ✓ Block 2 found! Hash: 0000c3d5e6...
+
+Control Messages:
+   [12:03:00] Mining paused
+   [12:03:30] Mining resumed
+   [12:04:00] Mining stopped
+
+Setting Changes:
+   [12:04:15] Difficulty changed to: Hard (5 leading zeros)
+   [12:04:30] CPU workload changed to: High
+
+Educational Features:
+   [12:05:00] ⚠ Block 1 has been tampered with for demonstration
+   [12:05:15] Blockchain validation: Block 1: Does not meet difficulty...
+
+Features:
+   • Timestamped entries [HH:MM:SS]
+   • Scrollable text area
+   • Auto-limited to 1000 lines (prevents memory issues)
+   • Cannot be edited by user
+
+═══════════════════════════════════════════════════════════════════════════
+🖱️  INTERACTIVE FEATURES
+═══════════════════════════════════════════════════════════════════════════
+
+DOUBLE-CLICK BLOCK FOR DETAILS:
+
+In Blockchain Viewer, double-click any block row to see:
+
+   ┌──────────────────────────────────────────────────────┐
+   │ Block 1 Details                                      │
+   ├──────────────────────────────────────────────────────┤
+   │                                                      │
+   │ Block Number: 1                                      │
+   │                                                      │
+   │ Previous Hash:                                       │
+   │ 89a3f2c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5 │
+   │                                                      │
+   │ Timestamp: 2024-01-15 12:00:45                      │
+   │                                                      │
+   │ Data: Block 1 - Educational Demo Transaction        │
+   │                                                      │
+   │ Nonce: 12345                                         │
+   │                                                      │
+   │ Hash:                                                │
+   │ 000a7b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5 │
+   │                                                      │
+   │ Difficulty: 4                                        │
+   │                                                      │
+   │ Status: Mined                                        │
+   │                                                      │
+   │                    [ OK ]                            │
+   │                                                      │
+   └──────────────────────────────────────────────────────┘
+
+Shows:
+   • Complete (untruncated) hashes
+   • Full block data
+   • All block properties
+   • Easy to copy values
+
+═══════════════════════════════════════════════════════════════════════════
+🎨 COLOR CODING
+═══════════════════════════════════════════════════════════════════════════
+
+Warning Banner:
+   • Red text - HIGH VISIBILITY
+
+Demo Coins:
+   • Green text - Indicates simulated value
+   • Bold font - Stands out
+
+Status Messages:
+   • ✓ Green for success (valid blockchain)
+   • ✗ Red for errors (invalid blockchain)
+   • ⚠ Orange for warnings (tamper detection)
+
+═══════════════════════════════════════════════════════════════════════════
+📏 WINDOW SIZE
+═══════════════════════════════════════════════════════════════════════════
+
+Default: 1200 × 800 pixels
+Minimum: 1200 × 800 pixels
+
+If window doesn't fit:
+   • Maximize the window
+   • Adjust Windows display scaling
+   • Use external monitor if available
+
+All elements are visible at 1200×800 minimum.
+
+═══════════════════════════════════════════════════════════════════════════
+⌨️  KEYBOARD SHORTCUTS
+═══════════════════════════════════════════════════════════════════════════
+
+Alt + F4
+   → Close application
+
+Esc (when focused on window)
+   → No action (not implemented)
+
+Tab
+   → Navigate between controls
+
+Enter (on focused button)
+   → Click button
+
+Arrow Keys (in blockchain viewer)
+   → Navigate rows
+
+═══════════════════════════════════════════════════════════════════════════
+🎯 TYPICAL USAGE FLOW
+═══════════════════════════════════════════════════════════════════════════
+
+1. Application starts → GUI appears
+2. Select difficulty → Choose "Easy" or "Medium"
+3. Click "⛏ Start Mining" → Mining begins
+4. Watch statistics → Nonce increments, hash changes
+5. Block found! → Added to blockchain viewer
+6. Demo coins increment → +6.25 per block
+7. Continue mining → More blocks added
+8. Try "🔧 Tamper Test" → See chain break
+9. Click "✓ Validate Blockchain" → See error
+10. Click "🔄 Reset" → Start over
+11. Click "⏹ Stop" → Mining stops
+12. Close window → Application exits
+
+═══════════════════════════════════════════════════════════════════════════
+💡 TIPS FOR BEST EXPERIENCE
+═══════════════════════════════════════════════════════════════════════════
+
+• Start with "Easy" difficulty to see quick results
+• Use "Medium" CPU workload to balance speed and temperature
+• Watch the hash change in real-time during mining
+• Double-click blocks to see complete information
+• Try "Tamper Test" after mining 2-3 blocks
+• Use "Validate Blockchain" to understand chain integrity
+• Monitor CPU usage in Task Manager during long runs
+• Pause mining if computer gets too warm
+
+═══════════════════════════════════════════════════════════════════════════
+
+🎓 Educational Bitcoin Mining Simulator - GUI Reference
+
+This visual guide shows what to expect when running the application.
+
+For complete instructions, see:
+   • QUICKSTART.txt
+   • README.md
+   • WINDOWS_INSTALLATION_GUIDE.md
+
+To run:
+   python main.py
+
+═══════════════════════════════════════════════════════════════════════════
